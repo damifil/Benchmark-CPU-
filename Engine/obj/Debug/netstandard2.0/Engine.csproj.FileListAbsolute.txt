@@ -1,0 +1,18 @@
+C:\dev\benchmark\Benchmark\Engine\bin\Debug\netstandard2.0\Engine.deps.json
+C:\dev\benchmark\Benchmark\Engine\bin\Debug\netstandard2.0\Engine.dll
+C:\dev\benchmark\Benchmark\Engine\bin\Debug\netstandard2.0\Engine.pdb
+C:\dev\benchmark\Benchmark\Engine\obj\Debug\netstandard2.0\Engine.csprojAssemblyReference.cache
+C:\dev\benchmark\Benchmark\Engine\obj\Debug\netstandard2.0\Engine.csproj.CoreCompileInputs.cache
+C:\dev\benchmark\Benchmark\Engine\obj\Debug\netstandard2.0\Engine.AssemblyInfoInputs.cache
+C:\dev\benchmark\Benchmark\Engine\obj\Debug\netstandard2.0\Engine.AssemblyInfo.cs
+C:\dev\benchmark\Benchmark\Engine\obj\Debug\netstandard2.0\Engine.dll
+C:\dev\benchmark\Benchmark\Engine\obj\Debug\netstandard2.0\Engine.pdb
+C:\Users\filipowicz\Desktop\benchmark — kopia\Benchmark\Engine\bin\Debug\netstandard2.0\Engine.deps.json
+C:\Users\filipowicz\Desktop\benchmark — kopia\Benchmark\Engine\bin\Debug\netstandard2.0\Engine.dll
+C:\Users\filipowicz\Desktop\benchmark — kopia\Benchmark\Engine\bin\Debug\netstandard2.0\Engine.pdb
+C:\Users\filipowicz\Desktop\benchmark — kopia\Benchmark\Engine\obj\Debug\netstandard2.0\Engine.csproj.CoreCompileInputs.cache
+C:\Users\filipowicz\Desktop\benchmark — kopia\Benchmark\Engine\obj\Debug\netstandard2.0\Engine.AssemblyInfoInputs.cache
+C:\Users\filipowicz\Desktop\benchmark — kopia\Benchmark\Engine\obj\Debug\netstandard2.0\Engine.AssemblyInfo.cs
+C:\Users\filipowicz\Desktop\benchmark — kopia\Benchmark\Engine\obj\Debug\netstandard2.0\Engine.dll
+C:\Users\filipowicz\Desktop\benchmark — kopia\Benchmark\Engine\obj\Debug\netstandard2.0\Engine.pdb
+C:\Users\filipowicz\Desktop\benchmark — kopia\Benchmark\Engine\obj\Debug\netstandard2.0\Engine.csprojAssemblyReference.cache

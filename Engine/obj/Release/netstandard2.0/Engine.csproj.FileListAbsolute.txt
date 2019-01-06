@@ -1,0 +1,9 @@
+C:\Users\filipowicz\Desktop\benchmark — kopia\Benchmark\Engine\bin\Release\netstandard2.0\Engine.deps.json
+C:\Users\filipowicz\Desktop\benchmark — kopia\Benchmark\Engine\bin\Release\netstandard2.0\Engine.dll
+C:\Users\filipowicz\Desktop\benchmark — kopia\Benchmark\Engine\bin\Release\netstandard2.0\Engine.pdb
+C:\Users\filipowicz\Desktop\benchmark — kopia\Benchmark\Engine\obj\Release\netstandard2.0\Engine.csprojAssemblyReference.cache
+C:\Users\filipowicz\Desktop\benchmark — kopia\Benchmark\Engine\obj\Release\netstandard2.0\Engine.csproj.CoreCompileInputs.cache
+C:\Users\filipowicz\Desktop\benchmark — kopia\Benchmark\Engine\obj\Release\netstandard2.0\Engine.AssemblyInfoInputs.cache
+C:\Users\filipowicz\Desktop\benchmark — kopia\Benchmark\Engine\obj\Release\netstandard2.0\Engine.AssemblyInfo.cs
+C:\Users\filipowicz\Desktop\benchmark — kopia\Benchmark\Engine\obj\Release\netstandard2.0\Engine.dll
+C:\Users\filipowicz\Desktop\benchmark — kopia\Benchmark\Engine\obj\Release\netstandard2.0\Engine.pdb
