@@ -30,12 +30,10 @@
   },
   "libraries": {
     "Microsoft.NETCore.Platforms/1.1.0": {
-      "sha512": "bLpT1f/SFlO1CzqXG12KnJzpZs6lv24uX2Rzi4Fmm0noJpNlnWRVryuO3yK18Ca04t/YHcO1e1Z0WDfjseqNzw==",
+      "sha512": "L0YI7v7wbxCH00JVEdzk97zd/MSWZz5TfdDQPr9sVontYcWhrAZSK9HsAEI1RW/4K/EvgJKNOlN1GMAbmPX9OA==",
       "type": "package",
       "path": "microsoft.netcore.platforms/1.1.0",
       "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
@@ -178,23 +176,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\filipowicz\\.nuget\\packages\\": {},
+    "C:\\Users\\damia\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\filipowicz\\Desktop\\benchmark — kopia\\Benchmark\\Engine\\Engine.csproj",
+      "projectUniqueName": "C:\\dev\\Benchmark OESK\\Engine\\Engine.csproj",
       "projectName": "Engine",
-      "projectPath": "C:\\Users\\filipowicz\\Desktop\\benchmark — kopia\\Benchmark\\Engine\\Engine.csproj",
-      "packagesPath": "C:\\Users\\filipowicz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\filipowicz\\Desktop\\benchmark — kopia\\Benchmark\\Engine\\obj\\",
+      "projectPath": "C:\\dev\\Benchmark OESK\\Engine\\Engine.csproj",
+      "packagesPath": "C:\\Users\\damia\\.nuget\\packages\\",
+      "outputPath": "C:\\dev\\Benchmark OESK\\Engine\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\filipowicz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\damia\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -202,7 +200,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "http://cyryl9:8080/nuget": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

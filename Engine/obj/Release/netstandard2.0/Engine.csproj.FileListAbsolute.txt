@@ -7,3 +7,12 @@ C:\Users\filipowicz\Desktop\benchmark — kopia\Benchmark\Engine\obj\Release\net
 C:\Users\filipowicz\Desktop\benchmark — kopia\Benchmark\Engine\obj\Release\netstandard2.0\Engine.AssemblyInfo.cs
 C:\Users\filipowicz\Desktop\benchmark — kopia\Benchmark\Engine\obj\Release\netstandard2.0\Engine.dll
 C:\Users\filipowicz\Desktop\benchmark — kopia\Benchmark\Engine\obj\Release\netstandard2.0\Engine.pdb
+C:\dev\Benchmark OESK\Engine\bin\Release\netstandard2.0\Engine.deps.json
+C:\dev\Benchmark OESK\Engine\bin\Release\netstandard2.0\Engine.dll
+C:\dev\Benchmark OESK\Engine\bin\Release\netstandard2.0\Engine.pdb
+C:\dev\Benchmark OESK\Engine\obj\Release\netstandard2.0\Engine.csproj.CoreCompileInputs.cache
+C:\dev\Benchmark OESK\Engine\obj\Release\netstandard2.0\Engine.AssemblyInfoInputs.cache
+C:\dev\Benchmark OESK\Engine\obj\Release\netstandard2.0\Engine.AssemblyInfo.cs
+C:\dev\Benchmark OESK\Engine\obj\Release\netstandard2.0\Engine.dll
+C:\dev\Benchmark OESK\Engine\obj\Release\netstandard2.0\Engine.pdb
+C:\dev\Benchmark OESK\Engine\obj\Release\netstandard2.0\Engine.csprojAssemblyReference.cache

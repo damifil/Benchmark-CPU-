@@ -5,14 +5,48 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WindowAplication"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" MinWidth="750" MinHeight="450">
+    <Window.DataContext>
+        <local:MainWindowVievModel/>
+    </Window.DataContext>
+
     <Grid>
 
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250" />
             <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="2*" />
         </Grid.ColumnDefinitions>
-        <Button Content="Wykonaj" HorizontalAlignment="Left" Margin="87,376,0,0" VerticalAlignment="Top" Width="75"/>
+        <StackPanel Name="left" Grid.Column="0" Margin="10,10,10,10">
+            <DockPanel Margin="0,20,0,0">
+                <Label  Content="Ilość powtórzeń" Width="150"/>
+                <TextBox  DockPanel.Dock="Right" PreviewTextInput="NumberValidationTextBox"/>
+            </DockPanel>
+            <DockPanel Margin="0,20,0,0">
+                <Label  Content="Początkowa ilośc zer" Width="150"/>
+                <TextBox  DockPanel.Dock="Right" PreviewTextInput="NumberValidationTextBox"/>
+            </DockPanel>
+            <DockPanel Margin="0,20,0,0">
+                <Label  Content="końcowa ilość zer" Width="150"/>
+                <TextBox DockPanel.Dock="Right" PreviewTextInput="NumberValidationTextBox" />
+            </DockPanel>
+            <DockPanel Margin="0,20,0,0">
+                <Label  Content="ilośc powtórzeń testu" Width="150"/>
+                <TextBox DockPanel.Dock="Right" PreviewTextInput="NumberValidationTextBox"/>
+            </DockPanel>
+            <DockPanel Margin="0,20,0,0">
+                <Label  Content="rodzaj algorytmu" Width="150"/>
+                <ListBox SelectedIndex="0" Width="70" >
+                    <ListBoxItem>sha256</ListBoxItem>
+                    <ListBoxItem>blake</ListBoxItem>
+                    <ListBoxItem>sha256d</ListBoxItem>
+                </ListBox>
+            </DockPanel>
+           
+
+            <Button Margin="0,20,0,0" Content="Wykonaj" Command="{Binding ButtonCommand}"  HorizontalAlignment="Center" VerticalAlignment="Top" Width="200"/>
+            <Button Margin="0,20,0,0" Content="Wczytaj poprzednie wyniki" Command="{Binding LoadDiagrams}"  HorizontalAlignment="Center" VerticalAlignment="Top" Width="200"/>
+
+        </StackPanel>
 
 
 
