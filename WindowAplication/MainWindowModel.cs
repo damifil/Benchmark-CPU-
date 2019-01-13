@@ -14,26 +14,33 @@ namespace WindowAplication
 
         public MainWindowModel()
         {
+            Parametrs = new TestParametr();
             GetCPUInformation();
         }
         public long[] score;
-        
-        public TestParametr Parametrs = new TestParametr();
+
+        public TestParametr Parametrs;
         public bool parallelTest = true;
         public string CPUInfromation = "";
         public void Runtest()
         {
             score = new long[Parametrs.numberOfRepeating];
             DiggingEngine engine = new DiggingEngine();
-            for (int i = 0; i < Parametrs.numberOfRepeating; i++)
+            Parallel.For(0, Parametrs.numberOfRepeating, i =>
             {
                 if (parallelTest)
+                {
                     score[i] = engine.DiggingTestParallel(Parametrs);
+                    //MessageBox.Show(score[i].ToString());
+                }
                 else
                     score[i] = engine.DiggingTest(Parametrs);
-            }
+            });
+
             // tutaj zapisać do jakiejś BD score
         }
+
+
 
         public void GetCPUInformation()
         {

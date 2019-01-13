@@ -19,28 +19,23 @@ namespace Engine
     }
 
 
-    public class TestParametr : INotifyPropertyChanged
+    public class TestParametr
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-        private void OnPropertyChanged(string property)
+        public TestParametr()
         {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(property));
+            algorithm = Algorithm.sha256;
+            numberOfZeroInBegin = 3;
+            stepToFInd = 10;
+            increasNoZTo = 3;
+            valueToChangeTimeInSearch = 900000000;
+            numberOfRepeating = 15;
         }
-
-        public void Setparametrs(int algorithm, int numberOfZeroInBegin, int stepToFInd, int increasNoZTo, int numberOfRepeating)
-        {
-
-        }
-        public Algorithm Algorithm { get { return algorithm; }  set { this.algorithm = value; OnPropertyChanged("Algorithm"); } }
-        public Algorithm algorithm = Algorithm.sha256;
-
-        public int NumberOfZeroInBegin { get { return numberOfZeroInBegin; } set { this.numberOfRepeating = value; OnPropertyChanged("NumberOfZeroInBegin"); } }
-        public int numberOfZeroInBegin = 2;
-        public int stepToFInd = 20;
-        public int increasNoZTo = 3;
-        public int valueToChangeTimeInSearch = 100000000;
-        public int numberOfRepeating = 15;
+        public Algorithm algorithm;
+        public int numberOfZeroInBegin;
+        public int stepToFInd;
+        public int increasNoZTo;
+        public int valueToChangeTimeInSearch;
+        public int numberOfRepeating;
     }
 
     public class Block
@@ -105,7 +100,7 @@ namespace Engine
             return DiggingTestParallel(parametrs.algorithm, parametrs.numberOfZeroInBegin, parametrs.stepToFInd, parametrs.increasNoZTo, parametrs.valueToChangeTimeInSearch);
         }
 
-        public long DiggingTestParallel(Algorithm algorithm, int numberOfZeroInBegin = 4, int stepToFInd = 2, int increasNoZTo = 4, int valueToChangeTimeInSearch = 100000000)
+        public long DiggingTestParallel(Algorithm algorithm, int numberOfZeroInBegin = 1, int stepToFInd = 2, int increasNoZTo = 2, int valueToChangeTimeInSearch = 900000000)
         {
             Stopwatch stopwatch = Stopwatch.StartNew();
 
@@ -133,11 +128,11 @@ namespace Engine
                                 state.Break();
                             }
                         });
-                        //           Console.WriteLine("za state.break;");
+                              //     Console.WriteLine("za state.break;");
                         block.time++;
                     }
                 }
-                //     Console.WriteLine("koniec iteracji paralell for");
+                    // Console.WriteLine("koniec iteracji paralell for");
             }//);
              //   Console.WriteLine("za głównym paralell;");
             stopwatch.Stop();

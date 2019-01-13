@@ -13,37 +13,38 @@
     <Grid>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="250" />
+            <ColumnDefinition Width="300" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <StackPanel Name="left" Grid.Column="0" Margin="10,10,10,10">
+            <Label Content="{Binding CPUName}"/>
             <DockPanel Margin="0,20,0,0">
                 <Label  Content="Ilość powtórzeń" Width="150"/>
-                <TextBox  DockPanel.Dock="Right" PreviewTextInput="NumberValidationTextBox"/>
+                <TextBox  DockPanel.Dock="Right" Text="{Binding StepToFInd}"  PreviewTextInput="NumberValidationTextBox" MaxLines="1"/>
             </DockPanel>
             <DockPanel Margin="0,20,0,0">
                 <Label  Content="Początkowa ilośc zer" Width="150"/>
-                <TextBox  DockPanel.Dock="Right" PreviewTextInput="NumberValidationTextBox"/>
+                <TextBox  DockPanel.Dock="Right" Text="{Binding NumberOfZeroInBegin}"  PreviewTextInput="NumberValidationTextBox" MaxLines="1"/>
             </DockPanel>
             <DockPanel Margin="0,20,0,0">
                 <Label  Content="końcowa ilość zer" Width="150"/>
-                <TextBox DockPanel.Dock="Right" PreviewTextInput="NumberValidationTextBox" />
+                <TextBox DockPanel.Dock="Right" Text="{Binding IncreasNoZTo}" PreviewTextInput="NumberValidationTextBox" MaxLines="1" />
             </DockPanel>
             <DockPanel Margin="0,20,0,0">
                 <Label  Content="ilośc powtórzeń testu" Width="150"/>
-                <TextBox DockPanel.Dock="Right" PreviewTextInput="NumberValidationTextBox"/>
+                <TextBox DockPanel.Dock="Right" Text="{Binding NumberOfRepeating}" PreviewTextInput="NumberValidationTextBox" MaxLines="1"/>
             </DockPanel>
             <DockPanel Margin="0,20,0,0">
                 <Label  Content="rodzaj algorytmu" Width="150"/>
-                <ListBox SelectedIndex="0" Width="70" >
+                <ListBox  Width="70" SelectedIndex="{Binding Algorithm}" >
                     <ListBoxItem>sha256</ListBoxItem>
                     <ListBoxItem>blake</ListBoxItem>
                     <ListBoxItem>sha256d</ListBoxItem>
                 </ListBox>
             </DockPanel>
-           
 
-            <Button Margin="0,20,0,0" Content="Wykonaj" Command="{Binding ButtonCommand}"  HorizontalAlignment="Center" VerticalAlignment="Top" Width="200"/>
+
+            <Button Margin="0,20,0,0" Content="Wykonaj"  IsEnabled="{Binding IsNotRunTest}" Command="{Binding RunTestCommand}"  HorizontalAlignment="Center" VerticalAlignment="Top" Width="200"/>
             <Button Margin="0,20,0,0" Content="Wczytaj poprzednie wyniki" Command="{Binding LoadDiagrams}"  HorizontalAlignment="Center" VerticalAlignment="Top" Width="200"/>
 
         </StackPanel>
