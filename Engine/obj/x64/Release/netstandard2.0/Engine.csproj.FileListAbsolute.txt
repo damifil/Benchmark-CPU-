@@ -1,0 +1,8 @@
+C:\dev\Benchmark OESK\Engine\bin\x64\Release\netstandard2.0\Engine.deps.json
+C:\dev\Benchmark OESK\Engine\bin\x64\Release\netstandard2.0\Engine.dll
+C:\dev\Benchmark OESK\Engine\bin\x64\Release\netstandard2.0\Engine.pdb
+C:\dev\Benchmark OESK\Engine\obj\x64\Release\netstandard2.0\Engine.csproj.CoreCompileInputs.cache
+C:\dev\Benchmark OESK\Engine\obj\x64\Release\netstandard2.0\Engine.AssemblyInfoInputs.cache
+C:\dev\Benchmark OESK\Engine\obj\x64\Release\netstandard2.0\Engine.AssemblyInfo.cs
+C:\dev\Benchmark OESK\Engine\obj\x64\Release\netstandard2.0\Engine.dll
+C:\dev\Benchmark OESK\Engine\obj\x64\Release\netstandard2.0\Engine.pdb

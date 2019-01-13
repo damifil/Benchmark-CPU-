@@ -26,7 +26,8 @@ namespace WindowAplication
         {
             score = new long[Parametrs.numberOfRepeating];
             DiggingEngine engine = new DiggingEngine();
-            Parallel.For(0, Parametrs.numberOfRepeating, i =>
+            // Parallel.For(0, Parametrs.numberOfRepeating, i =>
+            for(int i=0; i<Parametrs.numberOfRepeating; i++)
             {
                 if (parallelTest)
                 {
@@ -35,7 +36,7 @@ namespace WindowAplication
                 }
                 else
                     score[i] = engine.DiggingTest(Parametrs);
-            });
+            }//);
 
             // tutaj zapisać do jakiejś BD score
         }

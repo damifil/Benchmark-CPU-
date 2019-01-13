@@ -25,10 +25,10 @@ namespace Engine
         {
             algorithm = Algorithm.sha256;
             numberOfZeroInBegin = 3;
-            stepToFInd = 10;
+            stepToFInd = 100;
             increasNoZTo = 3;
             valueToChangeTimeInSearch = 900000000;
-            numberOfRepeating = 15;
+            numberOfRepeating = 30;
         }
         public Algorithm algorithm;
         public int numberOfZeroInBegin;
@@ -42,7 +42,7 @@ namespace Engine
     {
         public Block()
         {
-            previousHash = "0000000000000000000000000000000000000000000000000000000000000000";
+            previousHash = "";
             text = "first text";
             time = 3000000;
             isCorecthash = false;
@@ -63,6 +63,7 @@ namespace Engine
 
         public bool CheckNumberOfZero(int numberOfZero, string hashToTest)
         {
+
             var substring = hashToTest.Substring(0, numberOfZero);
             return substring.All(c => "0".Contains(c));
         }
@@ -76,7 +77,7 @@ namespace Engine
 
         public byte[] GetHash(Algorithm algorithm, string textToHash)
         {
-            var bytesOftext = System.Text.Encoding.Default.GetBytes(textToHash);
+            var bytesOftext = System.Text.Encoding.UTF8.GetBytes(textToHash);
             switch (algorithm)
             {
                 case Algorithm.sha256:
@@ -89,10 +90,15 @@ namespace Engine
             return new byte[0];
         }
 
-        public string GetHashString(Algorithm algorithm, Block blockToHash)
+        public static string ByteArrayToString(byte[] ba)
         {
-            var hashbyte = GetHash(algorithm, blockToHash.text + blockToHash.time.ToString() + blockToHash.randomValue.ToString());
-            return System.Text.Encoding.UTF8.GetString(hashbyte);
+            return BitConverter.ToString(ba).Replace("-", "");
+        }
+
+        public string GetHashString(Algorithm algorithm, Block blockToHash, string RandomValue)
+        {
+            var hashbyte = GetHash(algorithm, blockToHash.text + blockToHash.time.ToString() + RandomValue);
+            return ByteArrayToString(hashbyte);
         }
 
         public long DiggingTestParallel(TestParametr parametrs)
@@ -100,8 +106,9 @@ namespace Engine
             return DiggingTestParallel(parametrs.algorithm, parametrs.numberOfZeroInBegin, parametrs.stepToFInd, parametrs.increasNoZTo, parametrs.valueToChangeTimeInSearch);
         }
 
-        public long DiggingTestParallel(Algorithm algorithm, int numberOfZeroInBegin = 1, int stepToFInd = 2, int increasNoZTo = 2, int valueToChangeTimeInSearch = 900000000)
+        public long DiggingTestParallel(Algorithm algorithm, int numberOfZeroInBegin = 1, int stepToFInd = 2, int increasNoZTo = 1, int valueToChangeTimeInSearch = 900000000)
         {
+            object sync = new object();
             Stopwatch stopwatch = Stopwatch.StartNew();
 
             // Parallel.For(numberOfZeroInBegin, increasNoZTo + 1, NoZ =>
@@ -115,26 +122,36 @@ namespace Engine
                     block.hash = "";
                     while (block.isCorecthash != true)
                     {
-                        Random rnd = new Random(DateTime.Now.Minute);
+                        Random rnd = new Random(100);
 
                         Parallel.For(0, valueToChangeTimeInSearch, (j, state) =>
                         {
-                            block.randomValue = rnd.Next();
-                            var hash = GetHashString(algorithm, block);
+                            if (block.isCorecthash)
+                            {
+                                state.Break();
+                            }
+                            string rand = "";
+                            lock (sync)
+                            {
+                                block.randomValue = rnd.Next();
+                                rand = block.randomValue.ToString();
+                            }
+                            var hash = GetHashString(algorithm, block, rand);
+                            
                             if (block.CheckNumberOfZero(NoZ, hash) && block.isCorecthash != true)
                             {
+                                
                                 block.isCorecthash = true;
-                                //     Console.WriteLine(hash+"\n\n\n");
+                                block.hash = hash;
                                 state.Break();
                             }
                         });
-                              //     Console.WriteLine("za state.break;");
+                            //Console.WriteLine("za state.break;");
                         block.time++;
                     }
                 }
-                    // Console.WriteLine("koniec iteracji paralell for");
+                // Console.WriteLine("koniec iteracji paralell for");
             }//);
-             //   Console.WriteLine("za głównym paralell;");
             stopwatch.Stop();
             return stopwatch.ElapsedMilliseconds;
         }
@@ -163,8 +180,9 @@ namespace Engine
                         for (int j = 0; j < valueToChangeTimeInSearch; j++)
                         {
                             block.randomValue = rnd.Next();
-                            block.hash = GetHashString(algorithm, block);
-                            if (block.CheckNumberOfZero(NoZ))
+                            var hash = GetHashString(algorithm, block, block.randomValue.ToString());
+                            block.hash = hash;
+                            if (block.CheckNumberOfZero(NoZ, hash))
                             {
                                 block.isCorecthash = true;
                                 //   Console.WriteLine(block.hash + "\n\n\n");
