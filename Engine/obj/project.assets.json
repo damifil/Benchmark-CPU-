@@ -30,7 +30,7 @@
   },
   "libraries": {
     "Microsoft.NETCore.Platforms/1.1.0": {
-      "sha512": "L0YI7v7wbxCH00JVEdzk97zd/MSWZz5TfdDQPr9sVontYcWhrAZSK9HsAEI1RW/4K/EvgJKNOlN1GMAbmPX9OA==",
+      "sha512": "kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
       "type": "package",
       "path": "microsoft.netcore.platforms/1.1.0",
       "files": [
@@ -176,23 +176,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\damia\\.nuget\\packages\\": {},
+    "C:\\Users\\dawid\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\dev\\Benchmark OESK\\Engine\\Engine.csproj",
+      "projectUniqueName": "C:\\Users\\dawid\\Documents\\GitHub\\Benchmark-CPU-\\Engine\\Engine.csproj",
       "projectName": "Engine",
-      "projectPath": "C:\\dev\\Benchmark OESK\\Engine\\Engine.csproj",
-      "packagesPath": "C:\\Users\\damia\\.nuget\\packages\\",
-      "outputPath": "C:\\dev\\Benchmark OESK\\Engine\\obj\\",
+      "projectPath": "C:\\Users\\dawid\\Documents\\GitHub\\Benchmark-CPU-\\Engine\\Engine.csproj",
+      "packagesPath": "C:\\Users\\dawid\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\dawid\\Documents\\GitHub\\Benchmark-CPU-\\Engine\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\damia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\dawid\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

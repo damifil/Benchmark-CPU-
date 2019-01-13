@@ -25,3 +25,12 @@ C:\dev\Benchmark OESK\Engine\obj\Debug\netstandard2.0\Engine.AssemblyInfoInputs.
 C:\dev\Benchmark OESK\Engine\obj\Debug\netstandard2.0\Engine.AssemblyInfo.cs
 C:\dev\Benchmark OESK\Engine\obj\Debug\netstandard2.0\Engine.dll
 C:\dev\Benchmark OESK\Engine\obj\Debug\netstandard2.0\Engine.pdb
+C:\Users\dawid\Documents\GitHub\Benchmark-CPU-\Engine\bin\Debug\netstandard2.0\Engine.deps.json
+C:\Users\dawid\Documents\GitHub\Benchmark-CPU-\Engine\bin\Debug\netstandard2.0\Engine.dll
+C:\Users\dawid\Documents\GitHub\Benchmark-CPU-\Engine\bin\Debug\netstandard2.0\Engine.pdb
+C:\Users\dawid\Documents\GitHub\Benchmark-CPU-\Engine\obj\Debug\netstandard2.0\Engine.csproj.CoreCompileInputs.cache
+C:\Users\dawid\Documents\GitHub\Benchmark-CPU-\Engine\obj\Debug\netstandard2.0\Engine.AssemblyInfoInputs.cache
+C:\Users\dawid\Documents\GitHub\Benchmark-CPU-\Engine\obj\Debug\netstandard2.0\Engine.AssemblyInfo.cs
+C:\Users\dawid\Documents\GitHub\Benchmark-CPU-\Engine\obj\Debug\netstandard2.0\Engine.dll
+C:\Users\dawid\Documents\GitHub\Benchmark-CPU-\Engine\obj\Debug\netstandard2.0\Engine.pdb
+C:\Users\dawid\Documents\GitHub\Benchmark-CPU-\Engine\obj\Debug\netstandard2.0\Engine.csprojAssemblyReference.cache

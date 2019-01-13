@@ -4,11 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WindowAplication"
+        xmlns:DVC="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" MinWidth="750" MinHeight="450">
-    <Window.DataContext>
-        <local:MainWindowVievModel/>
-    </Window.DataContext>
+  
 
     <Grid>
 
@@ -47,6 +46,17 @@
             <Button Margin="0,20,0,0" Content="Wykonaj"  IsEnabled="{Binding IsNotRunTest}" Command="{Binding RunTestCommand}"  HorizontalAlignment="Center" VerticalAlignment="Top" Width="200"/>
             <Button Margin="0,20,0,0" Content="Wczytaj poprzednie wyniki" Command="{Binding LoadDiagrams}"  HorizontalAlignment="Center" VerticalAlignment="Top" Width="200"/>
 
+        </StackPanel>
+        <StackPanel Grid.Column="1" Name="Right" HorizontalAlignment="Right" Height="400" Margin="0,10,9.6,0" VerticalAlignment="Top" Width="464">
+            <DVC:Chart Canvas.Top="80" Canvas.Left="10" Name="mcChart" Height="398"
+           Background="LightSteelBlue" Margin="10,0" Title="Less is better">
+                <DVC:Chart.Series>
+                    <DVC:BarSeries Title="Time [ms]"    
+            IndependentValueBinding="{Binding Path=Key}"
+            DependentValueBinding="{Binding Path=Value}">
+                    </DVC:BarSeries>
+                </DVC:Chart.Series>
+            </DVC:Chart>
         </StackPanel>
 
 

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Engine;
 using System.Management;
 using System.Windows;
+using WindowAplication.Model;
 
 namespace WindowAplication
 {
@@ -27,7 +28,7 @@ namespace WindowAplication
             score = new long[Parametrs.numberOfRepeating];
             DiggingEngine engine = new DiggingEngine();
             // Parallel.For(0, Parametrs.numberOfRepeating, i =>
-            for(int i=0; i<Parametrs.numberOfRepeating; i++)
+            for (int i = 0; i < Parametrs.numberOfRepeating; i++)
             {
                 if (parallelTest)
                 {
@@ -38,14 +39,11 @@ namespace WindowAplication
                     score[i] = engine.DiggingTest(Parametrs);
             }//);
 
-            // tutaj zapisać do jakiejś BD score
+            SaveTest();
         }
-
-
 
         public void GetCPUInformation()
         {
-
             ManagementClass mgt = new ManagementClass("Win32_Processor");
             ManagementObjectCollection procs = mgt.GetInstances();
             foreach (ManagementObject item in procs)
@@ -61,13 +59,31 @@ namespace WindowAplication
         {
 
         }
-        public void SaveTest()
-        {
 
+        private long TotalTime()
+        {
+            long totalTime = 0;
+            foreach (var item in score)
+                totalTime += item;
+            return totalTime;
+        }
+
+        private void SaveTest()
+        {
+            using (Database1Entities db = new Database1Entities())
+            {
+                db.Scores.Add(new Scores {
+                    Name = CPUInfromation,
+                    Date = DateTime.Now,
+                    Score = TotalTime().ToString(),
+                    Test = Parametrs.algorithm + " " 
+                        + Parametrs.increasNoZTo + " " 
+                        + Parametrs.numberOfRepeating + " " 
+                        + Parametrs.numberOfZeroInBegin + " " 
+                        + Parametrs.valueToChangeTimeInSearch});
+                db.SaveChanges();
+            }
         }
 
     }
-
-
-
 }
