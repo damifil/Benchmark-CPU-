@@ -7,8 +7,10 @@
         xmlns:DVC="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" MinWidth="750" MinHeight="450">
-  
 
+    <Window.DataContext>
+        <local:MainWindowVievModel/>
+    </Window.DataContext>
     <Grid>
 
         <Grid.ColumnDefinitions>
@@ -49,9 +51,9 @@
         </StackPanel>
         <StackPanel Grid.Column="1" Name="Right" HorizontalAlignment="Right" Height="400" Margin="0,10,9.6,0" VerticalAlignment="Top" Width="464">
             <DVC:Chart Canvas.Top="80" Canvas.Left="10" Name="mcChart" Height="398"
-           Background="LightSteelBlue" Margin="10,0" Title="Less is better">
+           Background="LightSteelBlue" Margin="10,0" Title="Less is better" >
                 <DVC:Chart.Series>
-                    <DVC:BarSeries Title="Time [ms]"    
+                    <DVC:BarSeries Title="Time [ms]"  ItemsSource="{Binding Score}"  
             IndependentValueBinding="{Binding Path=Key}"
             DependentValueBinding="{Binding Path=Value}">
                     </DVC:BarSeries>

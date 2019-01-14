@@ -17,12 +17,14 @@ namespace WindowAplication
         {
             Parametrs = new TestParametr();
             GetCPUInformation();
+            scoreToShow = new List<KeyValuePair<string, int>>();
         }
         public long[] score;
 
         public TestParametr Parametrs;
         public bool parallelTest = true;
         public string CPUInfromation = "";
+        public System.Collections.Generic.List<KeyValuePair<string, int>> scoreToShow;
         public void Runtest()
         {
             score = new long[Parametrs.numberOfRepeating];
@@ -70,6 +72,12 @@ namespace WindowAplication
 
         private void SaveTest()
         {
+
+            scoreToShow = new System.Collections.Generic.List<KeyValuePair<string, int>>
+            {
+                new KeyValuePair<string, int>(CPUInfromation, (int)score.Sum())
+            };
+          
             using (Database1Entities db = new Database1Entities())
             {
                 db.Scores.Add(new Scores {

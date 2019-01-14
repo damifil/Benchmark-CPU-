@@ -1,5 +1,6 @@
 ﻿using Engine;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Windows;
@@ -38,6 +39,9 @@ namespace WindowAplication
             }
         }
 
+
+        public System.Collections.Generic.List<KeyValuePair<string, int>> Score { get { return model.scoreToShow; } set { model.scoreToShow = value; OnPropertyRaised("Score"); } }
+
         public Algorithm Algorithm { get { return model.Parametrs.algorithm; } set { model.Parametrs.algorithm = value; OnPropertyRaised("Algorithm"); } }
         public int NumberOfZeroInBegin { get { return model.Parametrs.numberOfZeroInBegin; } set { model.Parametrs.numberOfZeroInBegin = value; OnPropertyRaised("NumberOfZeroInBegin"); } }
         public int StepToFInd { get { return model.Parametrs.stepToFInd; } set { model.Parametrs.stepToFInd = value; OnPropertyRaised("StepToFInd"); } }
@@ -58,6 +62,7 @@ namespace WindowAplication
         {
             IsNotRunTest = false;
             await Task.Factory.StartNew(() => { model.Runtest(); });
+            Score = model.scoreToShow;
             IsNotRunTest = true;
             ShowDiagram();
         }
