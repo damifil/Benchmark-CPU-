@@ -27,7 +27,7 @@ namespace WindowAplication
         public MainWindow()
         {
             InitializeComponent();
-        //    DeleteDataBase();
+           // DeleteDataBase();
             // DiggingEngine a = new DiggingEngine();
             // a.DiggingTestParallel(Algorithm.sha256d);
         }

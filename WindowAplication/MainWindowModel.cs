@@ -60,7 +60,22 @@ namespace WindowAplication
 
         public void LoadTests()
         {
+            FillDiagram();
+        }
 
+        private void FillDiagram()
+        {
+            using (Database1Entities db = new Database1Entities())
+            {
+                string nameTest = GetNameTest();
+                var scores = db.Scores.Where(x => x.Test == nameTest);
+                List<KeyValuePair<string, int>> scoresList = new List<KeyValuePair<string, int>>();
+
+                foreach (var item in scores)
+                    scoresList.Add(new KeyValuePair<string, int>(item.Name, Convert.ToInt32(item.Score)));
+
+                scoreToShow = scoresList;
+            }
         }
 
         private long TotalTime()
@@ -85,14 +100,17 @@ namespace WindowAplication
                     Name = CPUInfromation,
                     Date = DateTime.Now,
                     Score = TotalTime().ToString(),
-                    Test = Parametrs.algorithm + " " 
-                        + Parametrs.increasNoZTo + " " 
-                        + Parametrs.numberOfRepeating + " " 
-                        + Parametrs.numberOfZeroInBegin + " " 
-                        + Parametrs.valueToChangeTimeInSearch});
+                    Test = GetNameTest()});
                 db.SaveChanges();
             }
         }
+
+        public string GetNameTest()
+            => Parametrs.algorithm + " "
+                    + Parametrs.stepToFInd + " "
+                    + Parametrs.increasNoZTo + " "
+                    + Parametrs.numberOfRepeating + " "
+                    + Parametrs.numberOfZeroInBegin;
 
     }
 }

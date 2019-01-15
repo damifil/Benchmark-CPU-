@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
@@ -67,27 +68,16 @@ namespace WindowAplication
             Score = model.scoreToShow;
             IsNotRunTest = true;
             ShowDiagram();
-            FillDiagram();
+            model.LoadTests();
         }
 
         public void LoadData(object obj)
         {
-            FillDiagram();
+            model.LoadTests();
+            Score = model.scoreToShow;
             // tutaj akacja by wyświetlić diagram XD
         }
 
-        private void FillDiagram()
-        {
-            using (Database1Entities db = new Database1Entities())
-            {
-                var scores = db.Scores;
-                List<KeyValuePair<string, int>> scoresList = new List<KeyValuePair<string, int>>();
-                foreach (var item in scores)
-                    scoresList.Add(new KeyValuePair<string, int>(item.Name, Convert.ToInt32(item.Score)));
-
-                Score = scoresList;
-            }
-        }
 
         private void ShowDiagram()
         {
