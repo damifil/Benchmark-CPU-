@@ -5,6 +5,8 @@ using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using WindowAplication.Model;
+
 namespace WindowAplication
 {
     public class MainWindowVievModel : INotifyPropertyChanged
@@ -65,11 +67,26 @@ namespace WindowAplication
             Score = model.scoreToShow;
             IsNotRunTest = true;
             ShowDiagram();
+            FillDiagram();
         }
 
         public void LoadData(object obj)
         {
+            FillDiagram();
             // tutaj akacja by wyświetlić diagram XD
+        }
+
+        private void FillDiagram()
+        {
+            using (Database1Entities db = new Database1Entities())
+            {
+                var scores = db.Scores;
+                List<KeyValuePair<string, int>> scoresList = new List<KeyValuePair<string, int>>();
+                foreach (var item in scores)
+                    scoresList.Add(new KeyValuePair<string, int>(item.Name, Convert.ToInt32(item.Score)));
+
+                Score = scoresList;
+            }
         }
 
         private void ShowDiagram()

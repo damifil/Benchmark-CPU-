@@ -7,6 +7,7 @@ using Engine;
 using System.Management;
 using System.Windows;
 using WindowAplication.Model;
+using System.Windows.Controls.DataVisualization.Charting;
 
 namespace WindowAplication
 {

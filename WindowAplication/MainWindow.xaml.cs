@@ -27,7 +27,7 @@ namespace WindowAplication
         public MainWindow()
         {
             InitializeComponent();
-           // LoadScores();
+        //    DeleteDataBase();
             // DiggingEngine a = new DiggingEngine();
             // a.DiggingTestParallel(Algorithm.sha256d);
         }
@@ -37,16 +37,18 @@ namespace WindowAplication
             e.Handled = regex.IsMatch(e.Text);
         }
 
-        private void LoadScores()
+        private void DeleteDataBase() // pomocnicza metoda do usuniecia danych
         {
             using (Database1Entities db = new Database1Entities())
             {
                 var scores = db.Scores;
-                List<KeyValuePair<string, int>> scoresList = new List<KeyValuePair<string, int>>();
-                foreach (var item in scores)
-                    scoresList.Add(new KeyValuePair<string, int>(item.Name, Convert.ToInt32(item.Score)));
 
-                ((BarSeries)mcChart.Series[0]).ItemsSource = scoresList;
+                foreach (var item in scores)
+                {
+                    db.Scores.Remove(item);
+                    
+                }
+                db.SaveChanges();
             }
         }
     }
