@@ -53,6 +53,8 @@ namespace WindowAplication
         public int NumberOfRepeating { get { return model.Parametrs.numberOfRepeating; } set { model.Parametrs.numberOfRepeating = value; OnPropertyRaised("NumberOfRepeating"); } }
         public bool IsNotRunTest { get { return isNotRunTest; } set { isNotRunTest = value; OnPropertyRaised("IsNotRunTest"); } }
         private bool isNotRunTest = true;
+        public string ColorColumn { get { return model.ColorColumnModel; } set { model.ColorColumnModel = value; OnPropertyRaised("ColorColumnBinding"); } }
+
         public string CPUName { get { return model.CPUInfromation; } set { } }
 
         public MainWindowVievModel()
@@ -69,6 +71,7 @@ namespace WindowAplication
             IsNotRunTest = true;
             ShowDiagram();
             model.LoadTests();
+            Score = model.scoreToShow;
         }
 
         public void LoadData(object obj)

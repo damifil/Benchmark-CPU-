@@ -26,6 +26,9 @@ namespace WindowAplication
         public bool parallelTest = true;
         public string CPUInfromation = "";
         public System.Collections.Generic.List<KeyValuePair<string, int>> scoreToShow;
+        public string ColorColumnModel = "#ff00ff";
+        public string lastScore = "";
+
         public void Runtest()
         {
             score = new long[Parametrs.numberOfRepeating];
@@ -72,8 +75,15 @@ namespace WindowAplication
                 List<KeyValuePair<string, int>> scoresList = new List<KeyValuePair<string, int>>();
 
                 foreach (var item in scores)
-                    scoresList.Add(new KeyValuePair<string, int>(item.Name, Convert.ToInt32(item.Score)));
-
+                {
+                    string name = item.Name;
+                    if(CPUInfromation == item.Name && lastScore == item.Score)
+                    {
+                        string tempName = name;
+                        name = "[My] " + tempName;
+                    }
+                    scoresList.Add(new KeyValuePair<string, int>(name, Convert.ToInt32(item.Score)));
+                }
                 scoreToShow = scoresList;
             }
         }
@@ -88,6 +98,7 @@ namespace WindowAplication
 
         private void SaveTest()
         {
+            lastScore = TotalTime().ToString();
 
             scoreToShow = new System.Collections.Generic.List<KeyValuePair<string, int>>
             {
@@ -103,6 +114,7 @@ namespace WindowAplication
                     Test = GetNameTest()});
                 db.SaveChanges();
             }
+            
         }
 
         public string GetNameTest()
