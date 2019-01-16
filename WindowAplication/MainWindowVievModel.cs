@@ -65,13 +65,20 @@ namespace WindowAplication
         }
         public async void RunTest(object obj)
         {
-            IsNotRunTest = false;
-            await Task.Factory.StartNew(() => { model.Runtest(); });
-            Score = model.scoreToShow;
-            IsNotRunTest = true;
-            ShowDiagram();
-            model.LoadTests();
-            Score = model.scoreToShow;
+            if (model.CheckCorectOfDataToTest())
+            {
+                IsNotRunTest = false;
+                await Task.Factory.StartNew(() => { model.Runtest(); });
+                Score = model.scoreToShow;
+                IsNotRunTest = true;
+                ShowDiagram();
+                model.LoadTests();
+                Score = model.scoreToShow;
+            }
+            else
+            {
+                MessageBox.Show("Niepoprawny format danych do testu, popraw dane");
+            }
         }
 
         public void LoadData(object obj)

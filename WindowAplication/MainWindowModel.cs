@@ -66,6 +66,17 @@ namespace WindowAplication
             FillDiagram();
         }
 
+        public bool CheckCorectOfDataToTest()
+        {
+            if(Parametrs.increasNoZTo==0 || Parametrs.numberOfRepeating==0 || Parametrs.numberOfZeroInBegin==0 || Parametrs.stepToFInd==0)
+            {
+                return false;
+            }
+            if(Parametrs.numberOfZeroInBegin>Parametrs.increasNoZTo)
+            { return false; }
+            return true;
+        }
+
         private void FillDiagram()
         {
             using (Database1Entities db = new Database1Entities())
